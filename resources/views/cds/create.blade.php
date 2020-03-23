@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="{{route(cds.store)}}" method="post">
+    <form class="" action="{{route('cds.store')}}" method="post">
       @csrf
       <input type="text" name="isbn" value="" placeholder="isbn">
       <input type="text" name="title" value="" placeholder="title">
@@ -14,8 +14,9 @@
       <input type="text" name="genre" value="" placeholder="genre">
       <input type="text" name="description" value="" placeholder="description">
       <input type="text" name="vote" value="" placeholder="vote">
-      <input type="text" name="created_at" value="">
-      @method(POST)
+
+      <button type="submit" name="button">Save</button>
+      @method('POST')
 
     </form>
 

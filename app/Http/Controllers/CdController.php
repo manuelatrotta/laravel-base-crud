@@ -25,7 +25,7 @@ class CdController extends Controller
      */
     public function create()
     {
-        //
+      return view('cds.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class CdController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $data=$request->all();
+      $cd = new Cd;
+      $cd->isbn= $data['isbn'];
+      $cd->title = $data['title'];
+      $cd->author = $data['author'];
+      $cd->price = $data['price'];
+      $cd->genre = $data['genre'];
+      $cd->description = $data['description'];
+      $cd->vote = $data['vote'];
+
+      $cd->save();
     }
 
     /**
