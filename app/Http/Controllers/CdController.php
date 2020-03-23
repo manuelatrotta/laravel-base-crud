@@ -46,7 +46,10 @@ class CdController extends Controller
       $cd->description = $data['description'];
       $cd->vote = $data['vote'];
 
-      $cd->save();
+      $save = $cd->save();
+      if ($save == true) {
+        return redirect()->route('cds.index');
+      }
     }
 
     /**
