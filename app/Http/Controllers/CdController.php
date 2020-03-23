@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cd;
 
 class CdController extends Controller
 {
@@ -13,7 +14,8 @@ class CdController extends Controller
      */
     public function index()
     {
-        //
+      $cds = Cd::all();
+      dd($cds);
     }
 
     /**
