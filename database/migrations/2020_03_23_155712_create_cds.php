@@ -15,6 +15,12 @@ class CreateCds extends Migration
     {
         Schema::create('cds', function (Blueprint $table) {
             $table->id();
+            $table->string('isbn',15);
+            $table->string('title');
+            $table->string('author');
+            $table->float('price', 8, 2);
+            $table->string('genre');
+            $table->text('description');
             $table->timestamps();
         });
     }
