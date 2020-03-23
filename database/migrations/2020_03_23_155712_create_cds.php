@@ -20,7 +20,7 @@ class CreateCds extends Migration
             $table->string('author');
             $table->float('price', 8, 2);
             $table->string('genre');
-            $table->text('description');
+            $table->string('description');
             $table->string('vote');
             $table->timestamps();
         });
