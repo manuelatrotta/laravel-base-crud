@@ -26,7 +26,7 @@ class UpdateCdsTable extends Migration
     public function down()
     {
       Schema::table('cds', function (Blueprint $table) {
-      $table->string('description')->chenge();
+      $table->string('description')->change();
       });
     }
 }
