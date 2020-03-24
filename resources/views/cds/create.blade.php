@@ -27,7 +27,7 @@
         <label for="genre">genre</label>
         <input type="text" name="genre" value="" placeholder="genre">
       </div>
-      <textarea name="description" rows="8" cols="80"></textarea>
+      <textarea name="description" rows="8" cols="80" placeholder="insert description"></textarea>
       <div class="">
         <label for="vote">voto</label>
         <input type="text" name="vote" value="" placeholder="vote">
