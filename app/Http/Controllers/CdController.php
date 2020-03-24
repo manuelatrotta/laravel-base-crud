@@ -41,7 +41,6 @@ class CdController extends Controller
       $request->validate([
         'isbn' => 'required|string|max:255',
         'price' => 'required|numeric|min:1|max:9999.99',
-        //'date_production' => 'required|date',
         ]);
       $newcd = new cd;
       //$cd = new Cd;
@@ -87,9 +86,13 @@ class CdController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cd $cd)
     {
-        //
+      if (empty($cd)) {
+            abort('404');
+        }
+
+        return view('cds.edit', compact('cd'));
     }
 
     /**
