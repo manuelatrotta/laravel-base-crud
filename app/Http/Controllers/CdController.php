@@ -25,7 +25,7 @@ class CdController extends Controller
      */
     public function create()
     {
-      return view('cds.create');
+      return view('cds.create', compact('cds'));
     }
 
     /**
@@ -51,7 +51,7 @@ class CdController extends Controller
       if ($save == true) {
         return redirect()->route('cds.index');
       }
-      dd('non salvato');  
+      dd('non salvato');
     }
 
     /**
