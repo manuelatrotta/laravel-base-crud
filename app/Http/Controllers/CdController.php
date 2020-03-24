@@ -41,7 +41,7 @@ class CdController extends Controller
       $request->validate([
         'isbn' => 'required|string|max:255',
         'price' => 'required|numeric|min:1|max:9999.99',
-        'date_production' => 'required|date',
+        //'date_production' => 'required|date',
         ]);
       $newcd = new cd;
       //$cd = new Cd;
@@ -55,7 +55,9 @@ class CdController extends Controller
       $newcd->fill($data);
       $save = $newcd->save();
       if ($save == true) {
-        return redirect()->route('cds.index');
+        $cd = cd::all()->last();
+        return redirect()->route('cds.show', compact('cd'));
+      //  return redirect()->route('cds.index');
       }
       dd('non salvato');
     }
