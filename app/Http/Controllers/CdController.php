@@ -15,7 +15,8 @@ class CdController extends Controller
     public function index()
     {
       $cds = Cd::all();
-      dd($cds);
+      //dd($cds);
+      return view('cds.index', compact('cds'));
     }
 
     /**
