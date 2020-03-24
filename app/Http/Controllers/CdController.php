@@ -37,19 +37,21 @@ class CdController extends Controller
     public function store(Request $request)
     {
       $data=$request->all();
-      $cd = new Cd;
-      $cd->isbn= $data['isbn'];
-      $cd->title = $data['title'];
-      $cd->author = $data['author'];
-      $cd->price = $data['price'];
-      $cd->genre = $data['genre'];
-      $cd->description = $data['description'];
-      $cd->vote = $data['vote'];
-
+      $newCd = new Cd;
+      //$cd = new Cd;
+      //$cd->isbn= $data['isbn'];
+      //$cd->title = $data['title'];
+      //$cd->author = $data['author'];
+      //$cd->price = $data['price'];
+      //$cd->genre = $data['genre'];
+      //$cd->description = $data['description'];
+      //$cd->vote = $data['vote'];
+      $newCd->fill($data);
       $save = $cd->save();
       if ($save == true) {
         return redirect()->route('cds.index');
       }
+      dd('non salvato');  
     }
 
     /**
