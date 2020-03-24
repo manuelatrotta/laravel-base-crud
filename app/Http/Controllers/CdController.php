@@ -38,7 +38,7 @@ class CdController extends Controller
     public function store(Request $request)
     {
       $data=$request->all();
-      $newCd = new Cd;
+      $newcd = new cd;
       //$cd = new Cd;
       //$cd->isbn= $data['isbn'];
       //$cd->title = $data['title'];
@@ -47,8 +47,8 @@ class CdController extends Controller
       //$cd->genre = $data['genre'];
       //$cd->description = $data['description'];
       //$cd->vote = $data['vote'];
-      $newCd->fill($data);
-      $save = $cd->save();
+      $newcd->fill($data);
+      $save = $newcd->save();
       if ($save == true) {
         return redirect()->route('cds.index');
       }
