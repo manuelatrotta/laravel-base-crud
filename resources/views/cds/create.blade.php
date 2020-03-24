@@ -5,8 +5,21 @@
     <title></title>
   </head>
   <body>
+    <header>
+      <h1>inserisci un cd</h1>
+      @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+    @endif
+    </header>
     <form class="" action="{{route('cds.store')}}" method="post">
       @csrf
+      @method('POST')
       <div class="">
         <label for="isbn">Codice isbn</label>
         <input type="text" name="isbn" value="" placeholder="isbn">
@@ -33,8 +46,6 @@
         <input type="text" name="vote" value="" placeholder="vote">
       </div>
       <button type="submit" name="button">Save</button>
-      @method('POST')
-
     </form>
 
   </body>

@@ -37,7 +37,12 @@ class CdController extends Controller
      */
     public function store(Request $request)
     {
-      $data=$request->all();
+      $data = $request->all();
+      $request->validate([
+        'isbn' => 'required|string|max:255',
+        'price' => 'required|numeric|min:1|max:9999.99',
+        'date_production' => 'required|date',
+        ]);
       $newcd = new cd;
       //$cd = new Cd;
       //$cd->isbn= $data['isbn'];
