@@ -66,9 +66,17 @@ class CdController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Cd $cd)
     {
-        //
+      {
+       //$shoe = Shoe::find($id);
+
+       if(empty($cd)) {
+           abort('404');
+       }
+
+       return view('cds.show', compact('cd'));
+   }
     }
 
     /**
