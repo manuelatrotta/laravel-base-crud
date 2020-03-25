@@ -21,13 +21,11 @@
       <li>vote:{{$cd->vote}}</li>
     </ul>
     <p>description:{{$cd->description}}</p>
-    <li>
       <form action="{{route('cds.destroy', $cd->id)}}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit">DELETE</button>
       </form>
-    </li>
   </div>
 
 @endforeach
