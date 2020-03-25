@@ -88,10 +88,6 @@ class CdController extends Controller
      */
     public function edit(Cd $cd)
     {
-      if (empty($cd)) {
-            abort('404');
-        }
-
         return view('cds.edit', compact('cd'));
     }
 
@@ -104,7 +100,18 @@ class CdController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $cd = Cd::find($id);
+        if(empty($cd)) {
+            abort('404');
+        }
+
+        $data = $request->all();
+        //$request->validate($this->validationCd);
+        $updated = $cd->update($data);
+        if ($updated) {
+            $cd = Cd::find($id);
+            return redirect()->route('cds.show', compact('cd'));
+        }
     }
 
     /**

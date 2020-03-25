@@ -17,33 +17,33 @@
       </div>
     @endif
     </header>
-    <form class="" action="{{route('cds.update'), compact('cd')}}" method="post">
+    <form class="" action="{{route('cds.update', $cd)}}" method="post">
       @csrf
       @method('PATCH')
       <div class="">
         <label for="isbn">Codice isbn</label>
-        <input type="text" name="isbn" value="" placeholder="isbn">
+        <input type="text" name="isbn" value="{{$cd->isbn}}" placeholder="isbn">
       </div>
       <div class="">
         <label for="title">titolo album</label>
-        <input type="text" name="title" value="" placeholder="title">
+        <input type="text" name="title" value="{{$cd->title}}" placeholder="title">
       </div>
       <div class="">
         <label for="author">Autore album</label>
-        <input type="text" name="author" value="" placeholder="author">
+        <input type="text" name="author" value="{{$cd->author}}" placeholder="author">
       </div>
       <div class="">
         <label for="price">prezzo</label>
-        <input type="text" name="price" value="" placeholder="price">
+        <input type="text" name="price" value="{{$cd->price}}" placeholder="price">
       </div>
       <div class="">
         <label for="genre">genre</label>
-        <input type="text" name="genre" value="" placeholder="genre">
+        <input type="text" name="genre" value="{{$cd->genre}}" placeholder="genre">
       </div>
       <textarea name="description" rows="8" cols="80" placeholder="insert description"></textarea>
       <div class="">
         <label for="vote">voto</label>
-        <input type="text" name="vote" value="" placeholder="vote">
+        <input type="text" name="vote" value="{{$cd->vote}}" placeholder="vote">
       </div>
       <button type="submit" name="button">Save</button>
     </form>

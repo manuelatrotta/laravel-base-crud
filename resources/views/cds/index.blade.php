@@ -21,6 +21,7 @@
       <li>vote:{{$cd->vote}}</li>
     </ul>
     <p>description:{{$cd->description}}</p>
+    <a href="{{route('cds.edit', $cd)}}">Modifica</a>
       <form action="{{route('cds.destroy', $cd->id)}}" method="POST">
         @csrf
         @method('DELETE')
