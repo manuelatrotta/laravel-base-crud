@@ -7,6 +7,15 @@ use App\Cd;
 
 class CdController extends Controller
 {
+  private $validationCd = [
+    'isbn =>required',
+    'title=>required',
+    'author=>required',
+    'price=>required',
+    'genre=>required',
+    'description=>required',
+    'vote=>required'
+   ];
     /**
      * Display a listing of the resource.
      *
@@ -106,7 +115,7 @@ class CdController extends Controller
         }
 
         $data = $request->all();
-        //$request->validate($this->validationCd);
+        $request->validate($this->validationCd);
         $updated = $cd->update($data);
         if ($updated) {
             $cd = Cd::find($id);
