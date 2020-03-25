@@ -6,7 +6,7 @@
   </head>
   <body>
     <header>
-      <h1>inserisci un cd</h1>
+      <h1>inserisci le modifiche nei rispettivi campi</h1>
       @if ($errors->any())
       <div class="alert alert-danger">
         <ul>
